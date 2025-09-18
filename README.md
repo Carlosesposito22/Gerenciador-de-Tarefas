@@ -1,58 +1,50 @@
-# DIO - Trilha .NET - API e Entity Framework
-www.dio.me
+# 🗓️ Gerenciador de Tarefas
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de API e Entity Framework, da trilha .NET da DIO.
+![Status do Projeto](https://img.shields.io/badge/status-concluído-brightgreen)
 
-## Contexto
-Você precisa construir um sistema gerenciador de tarefas, onde você poderá cadastrar uma lista de tarefas que permitirá organizar melhor a sua rotina.
+Um projeto simples para um sistema de agendamento de tarefas (CRUD), desenvolvido como parte do bootcamp da DIO. A aplicação consiste em uma API RESTful construída com .NET 6 e um frontend de página única utilizando AngularJS.
 
-Essa lista de tarefas precisa ter um CRUD, ou seja, deverá permitir a você obter os registros, criar, salvar e deletar esses registros.
+---
+## ✨ Funcionalidades
 
-A sua aplicação deverá ser do tipo Web API ou MVC, fique a vontade para implementar a solução que achar mais adequado.
+- [x] **Criar tarefas:** Adicionar novas tarefas com título, descrição, data e status.
+- [x] **Listar tarefas:** Visualizar todas as tarefas cadastradas.
+- [x] **Atualizar tarefas:** Modificar informações de uma tarefa existente.
+- [x] **Deletar tarefas:** Excluir uma tarefa.
+- [x] **Filtrar tarefas:** A API suporta buscas por título, data ou status.
 
-A sua classe principal, a classe de tarefa, deve ser a seguinte:
+---
 
-![Diagrama da classe Tarefa](diagrama.png)
+## 🛠️ Tecnologias Utilizadas
 
-Não se esqueça de gerar a sua migration para atualização no banco de dados.
+Backend
+<div>
+<img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" alt=".NET 6" />
+<img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#" />
+<img src="https://img.shields.io/badge/Entity%20Framework-4E2579?style=for-the-badge" alt="Entity Framework Core" />
+<img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white" alt="SQL Server" />
+</div>
 
-## Métodos esperados
-É esperado que você crie o seus métodos conforme a seguir:
+Frontend
+<div>
+<img src="https://img.shields.io/badge/AngularJS-E23237?style=for-the-badge&logo=angularjs&logoColor=white" alt="AngularJS" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />
+</div>
 
+---
 
-**Swagger**
-
-
-![Métodos Swagger](swagger.png)
-
-
-**Endpoints**
-
-
-| Verbo  | Endpoint                | Parâmetro | Body          |
-|--------|-------------------------|-----------|---------------|
-| GET    | /Tarefa/{id}            | id        | N/A           |
-| PUT    | /Tarefa/{id}            | id        | Schema Tarefa |
-| DELETE | /Tarefa/{id}            | id        | N/A           |
-| GET    | /Tarefa/ObterTodos      | N/A       | N/A           |
-| GET    | /Tarefa/ObterPorTitulo  | titulo    | N/A           |
-| GET    | /Tarefa/ObterPorData    | data      | N/A           |
-| GET    | /Tarefa/ObterPorStatus  | status    | N/A           |
-| POST   | /Tarefa                 | N/A       | Schema Tarefa |
-
-Esse é o schema (model) de Tarefa, utilizado para passar para os métodos que exigirem
-
-```json
-{
-  "id": 0,
-  "titulo": "string",
-  "descricao": "string",
-  "data": "2022-06-08T01:31:07.056Z",
-  "status": "Pendente"
-}
-```
+## 🌐 Endpoints da API
 
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+| Método HTTP | Endpoint              | Descrição                                 |
+|-------------|-----------------------|-------------------------------------------|
+| `GET`       | `/ObterTodos`         | Retorna uma lista de todas as tarefas.    |
+| `GET`       | `/{id}`               | Retorna uma tarefa específica pelo seu ID.  |
+| `GET`       | `/ObterPorTitulo`     | Busca tarefas pelo título.                |
+| `GET`       | `/ObterPorData`       | Busca tarefas por uma data específica.    |
+| `GET`       | `/ObterPorStatus`     | Busca tarefas por um status específico.   |
+| `POST`      | `/`                   | Cria uma nova tarefa.                     |
+| `PUT`       | `/{id}`               | Atualiza uma tarefa existente.            |
+| `DELETE`    | `/{id}`               | Deleta uma tarefa pelo seu ID.            |
